@@ -43,7 +43,7 @@ TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.bloc
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
-PEERS="`ef1cd7da8319351b51ec930924929d03a5b76dc3@rpc.paloma-mainnet.mirror-reflection.com:26656`"
+PEERS="ef1cd7da8319351b51ec930924929d03a5b76dc3@rpc.paloma-mainnet.mirror-reflection.com:26656"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.paloma/config/config.toml
 
 sed -i 's|^enable *=.*|enable = true|' $HOME/.paloma/config/config.toml
