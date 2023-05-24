@@ -153,6 +153,14 @@ evm:
     keyring-dir: ~/.pigeon/keys/evm/eth-main
     gas-adjustment: 1.9
     tx-type: 2
+  bnb-main:
+    chain-id: 56
+    base-rpc-url: \${BNB_RPC_URL}
+    keyring-pass-env-name: "BNB_PASSWORD"
+    signing-key: \${BNB_SIGNING_KEY}
+    keyring-dir: ~/.pigeon/keys/evm/bnb-main
+    gas-adjustment: 1.5
+    tx-type: 0
 EOF
 ```
 
@@ -164,12 +172,15 @@ palomad keys add wallet
 
 ```
 pigeon evm keys generate-new $HOME/.pigeon/keys/evm/eth-main
+pigeon evm keys generate-new $HOME/.pigeon/keys/evm/bnb-main
 ```
 
 ```
 PALOMA_PASSWORD=<YOUR_PALOMA_PASSWORD>
 ETH_PASSWORD=<YOUR_ETH_PASSWORD>
+BNB_PASSWORD = <YOUR_BNB_PASSWORD>
 ETH_SIGNING_KEY=0x$(cat $HOME/.pigeon/keys/evm/eth-main/*  | jq -r .address | head -n 1)
+BNB_SIGNING_KEY=0x$(cat $HOME/.pigeon/keys/evm/bnb-main/*  | jq -r .address | head -n 1)
 ```
 
 ```
@@ -178,6 +189,9 @@ PALOMA_PASSWORD=$PALOMA_PASSWORD
 ETH_RPC_URL=https://eth-mainnet.g.alchemy.com/v2/9bYS5h99MVmaa7f0fYztaHwN31k2EBvZ
 ETH_PASSWORD=$ETH_PASSWORD
 ETH_SIGNING_KEY=$ETH_SIGNING_KEY
+BNB_RPC_URL=https://wispy-falling-tent.bsc.discover.quiknode.pro/750bbdfab9cd076e37a35b91513b47e59ad8fc51
+BNB_PASSWORD=$BNB_PASSWORD
+BNB_SIGNING_KEY=$BNB_SIGNING_KEY
 EOF
 ```
 
