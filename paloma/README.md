@@ -50,11 +50,14 @@ NODE_MONIKER="YOUR_MONIKER_NAME"
 ### Download and build binaries
 
 ```
-cd || return
-curl -L https://github.com/palomachain/paloma/releases/download/v1.0.0/paloma_Linux_x86_64.tar.gz > paloma.tar.gz
-tar -xvzf paloma.tar.gz
-rm -rf paloma.tar.gz
-sudo mv -f palomad /usr/local/bin/palomad
+cd $HOME
+rm -rf paloma
+git clone https://github.com/palomachain/paloma.git
+cd paloma
+git checkout v1.0.0
+
+make build
+mv build/palomad /usr/local/bin/
 palomad version
 ```
 
