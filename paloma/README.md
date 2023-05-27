@@ -54,7 +54,7 @@ cd $HOME
 rm -rf paloma
 git clone https://github.com/palomachain/paloma.git
 cd paloma
-git checkout v1.0.0
+git checkout v1.1.0
 
 make build
 mv build/palomad /usr/local/bin/
@@ -62,7 +62,7 @@ palomad version
 ```
 
 ```
-curl -L https://github.com/palomachain/pigeon/releases/download/v1.0.0/pigeon_Linux_x86_64.tar.gz > pigeon.tar.gz
+curl -L https://github.com/palomachain/pigeon/releases/download/v1.1.0/pigeon_Linux_x86_64.tar.gz > pigeon.tar.gz
 tar -xvzf pigeon.tar.gz
 rm -rf pigeon.tar.gz
 sudo mv -f pigeon /usr/local/bin/pigeon
