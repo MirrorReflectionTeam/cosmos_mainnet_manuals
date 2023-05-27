@@ -54,7 +54,7 @@ cd $HOME
 rm -rf paloma
 git clone https://github.com/palomachain/paloma.git
 cd paloma
-git checkout v1.1.0
+git checkout v1.0.0
 
 make build
 mv build/palomad /usr/local/bin/
